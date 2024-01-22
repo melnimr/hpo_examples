@@ -11,8 +11,8 @@ scl = preprocessing.StandardScaler()
 pca = decomposition.PCA()
 
 rf = ensemble.RandomForestClassifier(n_jobs=-1)
-classifier = pipeline.Pipeline([("scaling",scl), ("pca", pca), ("rf", rf) ])
-#classifier = ensemble.RandomForestClassifier(n_jobs=-1)
+#classifier = pipeline.Pipeline([("scaling",scl), ("pca", pca), ("rf", rf) ])
+classifier = ensemble.RandomForestClassifier(n_jobs=-1)
 param_grid = {
         "n_estimators": np.arange(100,1500,100),
         "max_depth": np.arange(1,20),
